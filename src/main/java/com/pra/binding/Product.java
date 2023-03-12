@@ -1,9 +1,17 @@
 package com.pra.binding;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Product {
 
+	@NotNull(message = "ID is required")
 	private Integer pid;
+	@NotEmpty(message="Name is required")
+	@Size(min = 3, max = 8)
 	private String pname;
+	@NotNull(message="Price is required")
 	private Double price;
 	public Integer getPid() {
 		return pid;
